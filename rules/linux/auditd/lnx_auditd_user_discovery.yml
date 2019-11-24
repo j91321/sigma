@@ -12,8 +12,8 @@ logsource:
     service: auditd
 detection:
     selection:
-        type: 'EXECVE'
-        a0:
+        syscall: 'execve'
+        name:
             - 'users'
             - 'w'
             - 'who'

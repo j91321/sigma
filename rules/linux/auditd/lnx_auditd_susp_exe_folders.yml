@@ -11,8 +11,8 @@ logsource:
     service: auditd
 detection:
     selection:
-        type: 'SYSCALL'
-        exe:
+        syscall: 'execve'
+        executable:
             # Temporary folder
             - '/tmp/*'
             # Web server 

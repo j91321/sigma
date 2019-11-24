@@ -11,21 +11,21 @@ logsource:
     service: auditd
 detection:
     cmd1:
-        type: 'EXECVE'
-        a0: 'chmod'
-        a1: '777'
+        syscall: 'execve'
+        name: 'chmod'
+        args: '777'
     cmd2:
-        type: 'EXECVE'
-        a0: 'chmod'
-        a1: 'u+s'
+        syscall: 'execve'
+        name: 'chmod'
+        args: 'u+s'
     cmd3: 
-        type: 'EXECVE'
-        a0: 'cp'
-        a1: '/bin/ksh'
+        syscall: 'execve'
+        name: 'cp'
+        args: '/bin/ksh'
     cmd4:
-        type: 'EXECVE'
-        a0: 'cp'
-        a1: '/bin/sh'
+        syscall: 'execve'
+        name: 'cp'
+        args: '/bin/sh'
     condition: 1 of them
 falsepositives:
     - Admin activity
